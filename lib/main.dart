@@ -4,6 +4,20 @@ import 'package:video_player/video_player.dart';
 import 'package:videofeed/videos/_BumbleBeeRemoteVideo1.dart';
 import 'package:videofeed/videos/_BumbleBeeRemoteVideo3.dart';
 import 'package:videofeed/videos/_BumbleBeeRemoteVideo5.dart';
+// cd /Users/ViS/YoZu/videofeed/build/web/
+// git add .
+// git commit -m "first commit" .
+// git status
+// git remote add origin https://github.com/vizyozu/website.git
+// git push -u origin main
+
+// flutter build web --release --web-renderer canvaskit
+// flutter build web --release --web-renderer html
+// flutter run -d chrome --web-renderer canvaskit
+
+// https://www.youtube.com/watch?v=vxFYfumAAlY
+// https://www.youtube.com/watch?v=EwBK_cXUTZI
+// https://www.youtube.com/watch?v=rFdbY_V7vIo
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,12 +37,10 @@ void main() async {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-
           primary: Colors.deepPurpleAccent,
           secondary: Colors.deepPurple,
         ),
         primaryColor: Colors.deepPurpleAccent,
-        // secondary: const Color(0xFFFFC107),
       ),
       home: _App(),
     ),
@@ -88,228 +100,116 @@ class _ButterFlyAssetVideoInList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return SingleChildScrollView(
-      child: ListView(
-        shrinkWrap: true,
-        children: <Widget>[
-          Card(
-              child: Column(children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.adjust_rounded),
-                      title: Text("'What is Acceleration ?'"),
-                    ),
-                    Stack(
-                        alignment: FractionalOffset.bottomRight +
-                            const FractionalOffset(-0.1, -0.1),
-                        children: <Widget>[
-                          BumbleBeeRemoteVideo1(),
-                       //   Image.asset('assets/flutter-mark-square-64.png'),
-                        ]),
-                  ],
-                ),
-              ])),
-          // Card(
-          //     child: Column(children: <Widget>[
-          //       Column(
-          //         children: <Widget>[
-          //           const ListTile(
-          //             leading: Icon(Icons.cake),
-          //             title: Text("Video video"),
-          //           ),
-          //           Stack(
-          //               alignment: FractionalOffset.bottomRight +
-          //                   const FractionalOffset(-0.1, -0.1),
-          //               children: <Widget>[
-          //                 BumbleBeeRemoteVideo2(),
-          //              //   Image.asset('assets/flutter-mark-square-64.png'),
-          //               ]),
-          //         ],
-          //       ),
-          //     ])),
-          Card(
-              child: Column(children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.adjust_rounded),
-                      title: Text("Reflection of Light - What are Real and Virtual Images ? "),
-                    ),
-                    Stack(
-                        alignment: FractionalOffset.bottomRight +
-                            const FractionalOffset(-0.1, -0.1),
-                        children: <Widget>[
-                          BumbleBeeRemoteVideo3(),
-                         // Image.asset('assets/flutter-mark-square-64.png'),
-                        ]),
-                  ],
-                ),
-              ])),
-          // Card(
-          //     child: Column(children: <Widget>[
-          //       Column(
-          //         children: <Widget>[
-          //           const ListTile(
-          //             leading: Icon(Icons.cake),
-          //             title: Text("Video video"),
-          //           ),
-          //           Stack(
-          //               alignment: FractionalOffset.bottomRight +
-          //                   const FractionalOffset(-0.1, -0.1),
-          //               children: <Widget>[
-          //                 BumbleBeeRemoteVideo4(),
-          //              //   Image.asset('assets/flutter-mark-square-64.png'),
-          //               ]),
-          //         ],
-          //       ),
-          //     ])),
-          Card(
-              child: Column(children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.adjust_rounded),
-                      title: Text("Are Mass and Weight the same thing ? "),
-                    ),
-                    Stack(
-                        alignment: FractionalOffset.bottomRight +
-                            const FractionalOffset(-0.1, -0.1),
-                        children: <Widget>[
-                          BumbleBeeRemoteVideo5(),
-                        //  Image.asset('assets/flutter-mark-square-64.png'),
-                        ]),
-                  ],
-                ),
-              ])),
-          // _ExampleCard(title: "Item a"),
-          // _ExampleCard(title: "Item b"),
-          // _ExampleCard(title: "Item c"),
-          // _ExampleCard(title: "Item d"),
-          // _ExampleCard(title: "Item e"),
-          // _ExampleCard(title: "Item f"),
-          // _ExampleCard(title: "Item g"),
-          // Card(
-          //     child: Column(children: <Widget>[
-          //       Column(
-          //         children: <Widget>[
-          //           const ListTile(
-          //             leading: Icon(Icons.cake),
-          //             title: Text("Video video"),
-          //           ),
-          //           Stack(
-          //               alignment: FractionalOffset.bottomRight +
-          //                   const FractionalOffset(-0.1, -0.1),
-          //               children: <Widget>[
-          //                 _ButterFlyAssetVideo(),
-          //                 Image.asset('assets/flutter-mark-square-64.png'),
-          //               ]),
-          //         ],
-          //       ),
-          //     ])),
-          // _ExampleCard(title: "Item h"),
-          // _ExampleCard(title: "Item i"),
-          // _ExampleCard(title: "Item j"),
-          // _ExampleCard(title: "Item k"),
-          // _ExampleCard(title: "Item l"),
-        ],
-      ),
-    );
+    return ListView(
+      shrinkWrap: true,
+      children: <Widget>[
 
-  }
-}
-
-/// A filler card to show the video in a list of scrolling contents.
-class _ExampleCard extends StatelessWidget {
-  const _ExampleCard({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          ListTile(
-            leading: const Icon(Icons.airline_seat_flat_angled),
-            title: Text(title),
-          ),
-          ButtonBar(
-            children: <Widget>[
-              TextButton(
-                child: const Text('BUY TICKETS'),
-                onPressed: () {
-                  /* ... */
-                },
-              ),
-              TextButton(
-                child: const Text('SELL TICKETS'),
-                onPressed: () {
-                  /* ... */
-                },
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _ButterFlyAssetVideo extends StatefulWidget {
-  @override
-  _ButterFlyAssetVideoState createState() => _ButterFlyAssetVideoState();
-}
-
-class _ButterFlyAssetVideoState extends State<_ButterFlyAssetVideo> {
-  late VideoPlayerController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = VideoPlayerController.asset('assets/Butterfly-209.mp4');
-
-    _controller.addListener(() {
-      setState(() {});
-    });
-    _controller.setLooping(true);
-    _controller.initialize().then((_) => setState(() {}));
-    _controller.play();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 20.0),
-          ),
-          const Text('With assets mp4'),
-          Container(
-            padding: const EdgeInsets.all(20),
-            child: AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
+        Card(
+            child: Column(children: <Widget>[
+              Column(
                 children: <Widget>[
-                  VideoPlayer(_controller),
-                  _ControlsOverlay(controller: _controller),
-                  VideoProgressIndicator(_controller, allowScrubbing: true),
+                  const ListTile(
+                    leading: Icon(Icons.adjust_rounded),
+                    title: Text("What is Acceleration ? ",style: TextStyle(
+                      fontFamily: 'Airbnb',
+                      color: Colors.deepPurpleAccent,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 19,
+                    ),),
+                  ),
+                  Stack(
+                      alignment: FractionalOffset.bottomRight +
+                          const FractionalOffset(-0.1, -0.1),
+                      children: <Widget>[
+                        BumbleBeeRemoteVideo1(),
+                     //   Image.asset('assets/flutter-mark-square-64.png'),
+                      ]),
                 ],
               ),
-            ),
-          ),
-        ],
-      ),
+            ])
+        ),
+        Card(
+            child: Column(children: <Widget>[
+              Column(
+                children: <Widget>[
+                  const ListTile(
+                    leading: Icon(Icons.adjust_rounded),
+                    title: Text("Reflection of Light - What are Real and Virtual Images ? ",style: TextStyle(
+                      fontFamily: 'Airbnb',
+                      color: Colors.deepPurpleAccent,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 19,
+                    ),),
+                  ),
+                  Stack(
+                      alignment: FractionalOffset.bottomRight +
+                          const FractionalOffset(-0.1, -0.1),
+                      children: <Widget>[
+                        BumbleBeeRemoteVideo3(),
+                       // Image.asset('assets/flutter-mark-square-64.png'),
+                      ]),
+                ],
+              ),
+            ])
+        ),
+        Card(
+            child: Column(children: <Widget>[
+              Column(
+                children: <Widget>[
+                  const ListTile(
+                    leading: Icon(Icons.adjust_rounded),
+                    title: Text("Are Mass and Weight the same thing ? ",style: TextStyle(
+                      fontFamily: 'Airbnb',
+                      color: Colors.deepPurpleAccent,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 19,
+                    ),),
+                  ),
+                  Stack(
+                      alignment: FractionalOffset.bottomRight +
+                          const FractionalOffset(-0.1, -0.1),
+                      children: <Widget>[
+                        BumbleBeeRemoteVideo5(),
+                      //  Image.asset('assets/flutter-mark-square-64.png'),
+                      ]),
+                ],
+              ),
+            ])
+        ),
+
+        // _ExampleCard(title: "Item a"),
+        // _ExampleCard(title: "Item b"),
+        // _ExampleCard(title: "Item c"),
+        // _ExampleCard(title: "Item d"),
+        // _ExampleCard(title: "Item e"),
+        // _ExampleCard(title: "Item f"),
+        // _ExampleCard(title: "Item g"),
+        // Card(
+        //     child: Column(children: <Widget>[
+        //       Column(
+        //         children: <Widget>[
+        //           const ListTile(
+        //             leading: Icon(Icons.cake),
+        //             title: Text("Video video"),
+        //           ),
+        //           Stack(
+        //               alignment: FractionalOffset.bottomRight +
+        //                   const FractionalOffset(-0.1, -0.1),
+        //               children: <Widget>[
+        //                 _ButterFlyAssetVideo(),
+        //                 Image.asset('assets/flutter-mark-square-64.png'),
+        //               ]),
+        //         ],
+        //       ),
+        //     ])),
+        // _ExampleCard(title: "Item h"),
+        // _ExampleCard(title: "Item i"),
+        // _ExampleCard(title: "Item j"),
+        // _ExampleCard(title: "Item k"),
+        // _ExampleCard(title: "Item l"),
+      ],
     );
+
   }
 }
 
@@ -366,7 +266,7 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
                 children: <Widget>[
                   VideoPlayer(_controller),
                   ClosedCaption(text: _controller.value.caption.text),
-                  _ControlsOverlay(controller: _controller),
+                  ControlsOverlay(controller: _controller),
                   VideoProgressIndicator(_controller, allowScrubbing: true),
                 ],
               ),
@@ -378,8 +278,8 @@ class _BumbleBeeRemoteVideoState extends State<_BumbleBeeRemoteVideo> {
   }
 }
 
-class _ControlsOverlay extends StatelessWidget {
-  const _ControlsOverlay({Key? key, required this.controller})
+class ControlsOverlay extends StatelessWidget {
+  const ControlsOverlay({Key? key, required this.controller})
       : super(key: key);
 
   static const _exampleCaptionOffsets = [
